@@ -11,8 +11,8 @@ Conjunto de Ejercicios para Diseño de Sistemas
 
 **Para agregar un ejercicio:**
 1. Clonar o pullear el repo según corresponda
-2. Crear rama: En la consola de git bash, utilizar git `switch -c EjercicioX` que crea y te mueve a una nueva rama
-3. En el repo existe una carpeta *ProyectoBase* que se usa como template. Copiarlo y cambiarle el nombre a *numEjercicio-Título*
+2. En la consola de git bash, utilizar `git switch -c EjercicioX` que crea y te mueve a una nueva rama (antes de hacer nada, por precaución)
+3. En el repo existe una carpeta *ProyectoBase* que se usa como template. Hacer una copia con el nombre *numEjercicio-Título*
 4. Entrar al *pom.xml* y cambiarle el nombre al proyecto donde pone `<artifactId>nombreEnPom</artifactId>` casi arriba de todo
 5. Commitear en este punto (es decir con el proyecto vacío)
 6. Empezar a trabajar normalmente
