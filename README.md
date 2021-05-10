@@ -2,6 +2,14 @@
 
 Conjunto de Ejercicios para Diseño de Sistemas
 
+**Grupo 5**:
+- Bazzi Agustín
+- Goncalves Pablo
+- Huang Steven
+- Molina Nicolás
+- Seoane Carolina
+- Vergé Facundo
+
 ---
 
 ## Cómo Usar
