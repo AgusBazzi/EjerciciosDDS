@@ -11,12 +11,12 @@ public class Cuenta {
         this.setId(id);
     }
 
-    public void setSaldo(Float saldo) {
-        this.saldo = saldo;
+    public void setSaldo(Float unSaldo) {
+        this.saldo = unSaldo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer unId) {
+        this.id = unId;
     }
 
     public Integer getId() {

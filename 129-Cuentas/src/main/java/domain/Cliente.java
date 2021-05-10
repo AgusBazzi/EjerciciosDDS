@@ -20,16 +20,16 @@ public class Cliente {
         return dni;
     }
 
-    public void setDNI(String dni) {
-        this.dni = dni;
+    public void setDNI(String unDni) {
+        this.dni = unDni;
     }
 
-    public void setCuentas(List<Cuenta> cuentas) {
-        this.cuentas = cuentas;
+    public void setCuentas(List<Cuenta> unasCuentas) {
+        this.cuentas = unasCuentas;
     }
 
-    public void addCuentas(Cuenta ... cuentas) {
-        Collections.addAll(this.cuentas, cuentas);
+    public void addCuentas(Cuenta ... unasCuentas) {
+        Collections.addAll(this.cuentas, unasCuentas);
     }
 
     public List<Cuenta> cuentasQueSuperan(Float valorASuperar){

@@ -2,6 +2,7 @@ package control;
 
 import domain.Cliente;
 import domain.Cuenta;
+import exceptions.ClienteNoEncontradoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,16 +29,16 @@ public class ControlCuentas {
         return cuentasObjetivo.size();
     }
 
-    private Cliente buscarCliente(String dni){
+    private Cliente buscarCliente(String unDni){
         return clientes
                 .stream()
-                .filter( cliente -> cliente.getDNI().equals(dni))
+                .filter( cliente -> cliente.getDNI().equals(unDni))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow( () -> new ClienteNoEncontradoException(String.format("No existe un cliente con el dni %s", unDni)));
     }
 
-    public void addClientes(List<Cliente> clientes) {
-        this.clientes.addAll(clientes);
+    public void addClientes(List<Cliente> unosClientes) {
+        this.clientes.addAll(unosClientes);
     }
 
     public List<Cliente> getClientes() {
