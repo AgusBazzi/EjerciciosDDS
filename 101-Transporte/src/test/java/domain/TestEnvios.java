@@ -2,14 +2,12 @@ package domain;
 
 import domain.envio.Envio;
 import domain.transportistas.FedEx;
-import domain.transportistas.Normal;
+import domain.transportistas.TransportistaDefault;
 import domain.transportistas.UPS;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class TestEnvios{
 
@@ -21,7 +19,7 @@ public class TestEnvios{
     public void inicializarEnvios(){
         this.envio1 = new Envio(0, 10, 6, new FedEx());
         this.envio2 = new Envio(5, 10, 3, new UPS());
-        this.envio3 = new Envio(7, 19, 9, new Normal());
+        this.envio3 = new Envio(7, 19, 9, new TransportistaDefault());
 
     }
 
