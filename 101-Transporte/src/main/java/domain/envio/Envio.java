@@ -9,49 +9,49 @@ public class Envio {
 
     private Integer pesoPaquete;
 
-    private Transportista estrategia;
+    private Transportista transportista;
 
     public Integer getDireccionDesde() {
         return direccionDesde;
     }
 
-    public void setDireccionDesde(Integer direccionDesde) {
-        this.direccionDesde = direccionDesde;
+    public void setDireccionDesde(Integer unaDireccion) {
+        this.direccionDesde = unaDireccion;
     }
 
     public Integer getDireccionHasta() {
         return direccionHasta;
     }
 
-    public void setDireccionHasta(Integer direccionHasta) {
-        this.direccionHasta = direccionHasta;
+    public void setDireccionHasta(Integer unaDireccion) {
+        this.direccionHasta = unaDireccion;
     }
 
     public Integer getPesoPaquete() {
         return pesoPaquete;
     }
 
-    public void setPesoPaquete(Integer pesoPaquete) {
-        this.pesoPaquete = pesoPaquete;
+    public void setPesoPaquete(Integer unPesoPaquete) {
+        this.pesoPaquete = unPesoPaquete;
     }
 
-    public Transportista getEstrategia() {
-        return estrategia;
+    public Transportista getTransportista() {
+        return transportista;
     }
 
-    public void setEstrategia(Transportista estrategia) {
-        this.estrategia = estrategia;
+    public void setTransportista(Transportista unTransportista) {
+        this.transportista = unTransportista;
     }
 
     public Integer calcularCosto(){
-        return this.estrategia.calcularCosto(this);
+        return this.transportista.calcularCosto(this);
     }
 
-    public Envio(Integer dd, Integer dh, Integer pp, Transportista transportista ){
-        this.direccionDesde = dd;
-        this.direccionHasta = dh;
-        this.pesoPaquete = pp;
-        this.estrategia = transportista;
+    public Envio(Integer dirDesde, Integer dirHasta, Integer pesoPaquete, Transportista transportista){
+        this.setDireccionDesde(dirDesde);
+        this.setDireccionHasta(dirHasta);
+        this.setPesoPaquete(pesoPaquete);
+        this.setTransportista(transportista);
     }
 
 }
