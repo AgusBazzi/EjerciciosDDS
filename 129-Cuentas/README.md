@@ -13,4 +13,8 @@
 - [x] Calcular la cantidad de cuentas de un cliente con saldo mayor a un valor dado
 - [x] Verificar el funcionamiento de ClienteNoEncontradoException y su mensaje
 
+### Otros
+
 ## TODO:
+- [ ] Mover la lógica de filtrado a ControlCuentas
+- [ ] Implementar una clase que haga de interfaz para el igreso de datos

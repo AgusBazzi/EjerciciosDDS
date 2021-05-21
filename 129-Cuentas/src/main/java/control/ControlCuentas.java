@@ -6,6 +6,8 @@ import exceptions.ClienteNoEncontradoException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class ControlCuentas {
 
@@ -24,9 +26,10 @@ public class ControlCuentas {
 
     public Integer chequearCuentas(String dniCliente, Float valorASuperar){
         Cliente clienteObjetivo = this.buscarCliente(dniCliente);
-        List<Cuenta> cuentasObjetivo = clienteObjetivo.cuentasQueSuperan(valorASuperar);
+        List<Cuenta> cuentasObjetivo = clienteObjetivo.getCuentas();
+        List<Cuenta> cuentasValidas = this.cuentasQueSuperan(cuentasObjetivo, valorASuperar);
 
-        return cuentasObjetivo.size();
+        return cuentasValidas.size();
     }
 
     private Cliente buscarCliente(String unDni){
@@ -35,6 +38,13 @@ public class ControlCuentas {
                 .filter( cliente -> cliente.getDNI().equals(unDni))
                 .findFirst()
                 .orElseThrow( () -> new ClienteNoEncontradoException(String.format("No existe un cliente con el dni %s", unDni)));
+    }
+
+    private List<Cuenta> cuentasQueSuperan(List<Cuenta> unasCuentas, Float valorASuperar){
+        return unasCuentas
+                .stream()
+                .filter( cuenta -> cuenta.getSaldo() >= valorASuperar)
+                .collect(Collectors.toList());
     }
 
     public void addClientes(List<Cliente> unosClientes) {

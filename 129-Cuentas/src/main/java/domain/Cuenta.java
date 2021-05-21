@@ -11,21 +11,24 @@ public class Cuenta {
         this.setId(id);
     }
 
-    public void setSaldo(Float unSaldo) {
-        this.saldo = unSaldo;
+    public Float getSaldo() {
+        return saldo;
     }
 
-    public void setId(Integer unId) {
-        this.id = unId;
+    public void setSaldo(Float unSaldo) {
+        this.saldo = unSaldo;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public Boolean saldoMayorA(Float valorASuperar){
-        return this.saldo >= valorASuperar;
+    public void setId(Integer unId) {
+        this.id = unId;
     }
+
+
+
 
 
 }

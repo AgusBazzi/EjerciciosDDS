@@ -3,7 +3,6 @@ package domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class Cliente {
@@ -24,18 +23,15 @@ public class Cliente {
         this.dni = unDni;
     }
 
+    public List<Cuenta> getCuentas() {
+        return cuentas;
+    }
+
     public void setCuentas(List<Cuenta> unasCuentas) {
         this.cuentas = unasCuentas;
     }
 
     public void addCuentas(Cuenta ... unasCuentas) {
         Collections.addAll(this.cuentas, unasCuentas);
-    }
-
-    public List<Cuenta> cuentasQueSuperan(Float valorASuperar){
-        return cuentas
-                .stream()
-                .filter( cuenta -> cuenta.saldoMayorA(valorASuperar))
-                .collect(Collectors.toList());
     }
 }
