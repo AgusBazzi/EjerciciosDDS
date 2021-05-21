@@ -14,7 +14,7 @@
 - [x] Verificar el funcionamiento de ClienteNoEncontradoException y su mensaje
 
 ### Otros
+- [x] Mover la lógica de filtrado a ControlCuentas
 
 ## TODO:
-- [ ] Mover la lógica de filtrado a ControlCuentas
 - [ ] Implementar una clase que haga de interfaz para el igreso de datos
