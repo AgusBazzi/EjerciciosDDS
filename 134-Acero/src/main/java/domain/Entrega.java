@@ -12,4 +12,16 @@ public class Entrega {
         this.fechaEntrega = fecha;
         this.articulos = new ArrayList<>();
     }
+
+    public Date getFechaEntrega() {
+        return fechaEntrega;
+    }
+
+    public void setFechaEntrega(Date fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
+    }
+
+    public void agregarArtPedido(ArtPedido artPedido) {
+        articulos.add(artPedido);
+    }
 }

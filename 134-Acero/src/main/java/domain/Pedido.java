@@ -1,7 +1,11 @@
 package domain;
 
+import exceptions.EntregaNoEncontradaException;
+import exceptions.EnvaseNoEncontradoException;
+
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Optional;
 
 public class Pedido {
 
@@ -18,5 +22,19 @@ public class Pedido {
         this.id = id;
     }
 
+    public int getId(){
+        return id;
+    }
 
+    public void agregarArtPedido(ArtPedido artPedido, Date unaFecha) {
+        Entrega entrega = buscarEntregaSegun(unaFecha);
+        entrega.agregarArtPedido(artPedido);
+    }
+
+    private Entrega buscarEntregaSegun(Date unaFecha) {
+        return listaEntregas.stream()
+                .filter(unaEntrega -> unaEntrega.getFechaEntrega().equals(unaFecha))
+                .findFirst()
+                .orElseThrow( () -> new EntregaNoEncontradaException(String.format("No existe una entrega con esa fecha")));
+    }
 }
