@@ -6,16 +6,12 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.InputMismatchException;
 
 public class Planificador {
 
     private static Planificador instance = null;
-    private Empresa empresa;
-    private Pedido unPedido;
 
-
-
-    // Patron Singleton
     private Planificador() {}
 
     public static Planificador getInstance() {
@@ -25,7 +21,15 @@ public class Planificador {
         return instance;
     }
 
-    public ArrayList<Date> planificar(int cod_cliente, Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad){
+    //////
+
+    private Empresa empresa = new Empresa();
+
+    public boolean validarCliente(int cod_cliente) {
+        return empresa.validarCliente(cod_cliente);
+    }
+
+   /* public ArrayList<Date> planificar(int cod_cliente, Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad){
 
         //Calculo las fechas de entrega
         ArrayList<Date> fechas = this.calcularFechas(fechaPrimerEntrega, cantidadEntregas, periodicidad);
@@ -38,11 +42,13 @@ public class Planificador {
 
         //Creo el pedido
 
-        unPedido = new Pedido(fechaPrimerEntrega, cantidadEntregas, periodicidad, entregas, id);
+        Pedido unPedido = new Pedido(fechaPrimerEntrega, cantidadEntregas, periodicidad, entregas, id);
 
         return fechas;
     }
 
+
+/*
     private ArrayList<Entrega> generarEntregas(ArrayList<Date> fechas) {
         //Genero las entregas segun cada fecha
         ArrayList<Entrega> entregas = new ArrayList<>();
@@ -50,6 +56,7 @@ public class Planificador {
             Entrega nuevaEntrega = new Entrega(unaFecha);
             entregas.add(nuevaEntrega);
         }
+        return entregas;
     }
 
     private ArrayList<Date> calcularFechas(Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad) {
@@ -73,12 +80,10 @@ public class Planificador {
     private int generarNuevoId() {
         //Genero el id del pedido. CREO que pidiendolo asi siempre habria uno distinto, porque sino no tenemos donde chequear
         return (int)System.currentTimeMillis();
-    }
+    }*/
 
-    public boolean validarCliente(int cod_cliente) {
-        return empresa.validarCliente(cod_cliente);
-    }
 
+/*
     public Date sumarRestarDiasFecha(Date fecha, int dias){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha); // Configuramos la fecha que se recibe
@@ -106,5 +111,5 @@ public class Planificador {
 
     public int buscarIdDelPedido() {
         return unPedido.getId();
-    }
+    }*/
 }

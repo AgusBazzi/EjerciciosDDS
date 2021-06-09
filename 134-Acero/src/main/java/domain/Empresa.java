@@ -7,9 +7,10 @@ import java.util.ArrayList;
 public class Empresa {
 
     private static ArrayList<Articulo> articulos;
-    private static ArrayList<Integer> clientes;
+    private ArrayList<Integer> clientes = new ArrayList<Integer>();
 
     public Boolean validarCliente(int codCli){
+        clientes.add(3);
         return clientes.contains(codCli);
     }
 

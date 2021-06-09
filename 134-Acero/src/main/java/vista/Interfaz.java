@@ -2,53 +2,103 @@ package vista;
 
 import control.Planificador;
 import domain.Envase;
+import domain.Periodicidad;
 import exceptions.EnvaseNoEncontradoException;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+// agrego estos
+import java.text.SimpleDateFormat;
 
 public class Interfaz {
 
     public static void main(String[] args) throws IOException {
 
-        //Instancio el planificador
         Planificador planificador = Planificador.getInstance();
-
-        // Para el menú
         Scanner sc = new Scanner(System.in);
-        int cod_cliente;
-        Date fechaPrimerEntrega;
+        int cod_cliente = 0;
+        Date fechaPrimerEntrega = null;
         int cantEntregas;
-        int period;
+        Periodicidad period = null;
 
-        int clienteValidado = 0;
-        while(clienteValidado!= 1){
-            System.out.println("\tIngrese su codigo de cliente:");
-            cod_cliente = sc.nextInt();
-            sc.nextLine();
 
-            if(planificador.validarCliente(cod_cliente)){
-                clienteValidado = 1;
+        // 1) UI pide el codigo al cliente y el planificador valida al cliente
+        Boolean validado = false;
+        while (!validado) {
+            System.out.print("\nIngrese su codigo de cliente: ");
+            try {
+                cod_cliente = sc.nextInt();
+                sc.nextLine();
+                if(planificador.validarCliente(cod_cliente)) {
+                    validado = true;
+                } else {
+                    System.out.print("Codigo invalido\n");
+                }
+            } catch (InputMismatchException e) { // por si ingresa algo no numerico. Hago esta validacion aca porque lo considero tarea de la interfaz
+                System.out.print("Error: el codigo ingresado solo debe contener caracteres numericos\n");
+                sc.next();
             }
         }
 
 
-        //TODO: Ingrese la fecha de la primera entrega
+        // 2) UI pide ingresar fecha de la primera entrega al cliente
+        validado = false;
+        while(!validado) {
+            System.out.print("\nIngrese la fecha de la primera entrega en formato dd/mm/aaaa: ");
+            String stringDate = sc.next();
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                fechaPrimerEntrega = formato.parse(stringDate);
+                validado = true;
+            } catch (ParseException e) {
+                //e.printStackTrace();
+                System.out.print("Error: utilice el formato dd/mm/aaaa\n");
+            }
+        }
 
-        System.out.println("\tIngrese la cantidad de entregas:");
+
+        // 3) UI pide ingresar cantidad de entregas y la periodicidad de las mismas
+        //YA SE QUE ACA NO VALIDO SI ES UN NRO O NO PERO ES LO MISMO DE SIEMPRE. TODO
+        System.out.print("\nIngrese la cantidad de entregas: ");
         cantEntregas = sc.nextInt();
         sc.nextLine();
 
-        System.out.println("\tIngrese la periodicidad de las entregas: (0:UNICAVEZ, 1:SEMANAL, 2:MENSUAL)");
-        period = sc.nextInt();
-        sc.nextLine();
-        //TODO: Pasar period a Enum
-        sc.nextLine();
+        validado = false;
+        while(!validado) {
+            System.out.print("\nIngrese la periodicidad de las entregas: (0: UNICA VEZ, 1: SEMANAL, 2: MENSUAL): ");
+            try {
+                int selec = sc.nextInt();
+                sc.nextLine();
+                switch (selec) {
+                    case 0:
+                        period = Periodicidad.UNICAVEZ;
+                        validado = true;
+                        break;
+                    case 1:
+                        period = Periodicidad.SEMANAL;
+                        validado = true;
+                        break;
+                    case 2:
+                        period = Periodicidad.MENSUAL;
+                        validado = true;
+                    default:
+                        System.out.print("Error: el numero ingresado debe ser 0 - 1 - 2\n");
+                }
+            } catch (InputMismatchException e) {
+                System.out.print("Error: debe ingresar un caracter numerico\n");
+                sc.next();
+            }
+        }
 
-        ArrayList<Date> fechas = planificador.planificar(cod_cliente, fechaPrimerEntrega, cantEntregas, period);
-
+        //ArrayList<Date> fechas = planificador.planificar(cod_cliente, fechaPrimerEntrega, cantEntregas, period);
+        
+/*
         for(Date unaFecha: fechas){
             int selec = 1;
             int cod_articulo;
@@ -103,6 +153,9 @@ public class Interfaz {
 
         int idPedido = planificador.buscarIdDelPedido();
         System.out.print("\tSe creó el pedido. El identificador es: " + idPedido);
+
+ */
+
     }
 
 }
