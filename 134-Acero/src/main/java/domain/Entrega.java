@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Entrega {
 
-    private Date fechaEntrega;
+    private Date fechaEntrega =  null;
     private ArrayList<ArtPedido> articulos;
 
     public Entrega(Date fecha) {

@@ -13,12 +13,13 @@ public class Pedido {
     private Date fechaPrimerEntrega;
     private int cantidadEntregas;
     private Periodicidad periodicidad;
-    private ArrayList<Entrega> listaEntregas;
+    private ArrayList<Entrega> entregas;
 
     public Pedido(Date fechaPrimeraEntrega, int cantidadEntregas, Periodicidad periodicidad, ArrayList<Entrega> listaEntregas, String id){
         this.fechaPrimerEntrega = fechaPrimeraEntrega;
         this.cantidadEntregas = cantidadEntregas;
         this.periodicidad = periodicidad;
+        this.entregas = listaEntregas;
         this.id = id;
     }
 
@@ -32,9 +33,13 @@ public class Pedido {
     }
 
     private Entrega buscarEntregaSegun(Date unaFecha) {
-        return listaEntregas.stream()
+        return entregas.stream()
                 .filter(unaEntrega -> unaEntrega.getFechaEntrega().equals(unaFecha))
                 .findFirst()
                 .orElseThrow( () -> new EntregaNoEncontradaException(String.format("No existe una entrega con esa fecha")));
+    }
+
+    public int cantEntregas() {
+        return entregas.size();
     }
 }

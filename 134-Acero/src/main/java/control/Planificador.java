@@ -37,12 +37,14 @@ public class Planificador {
         ArrayList<Entrega> entregas = this.generarEntregas(fechas); //Una vez que tengo las fechas, agrego una entrega por cada fecha
         String id = this.generarNuevoId(); //Genero el id y creo el pedido
         Pedido unPedido = new Pedido(fechaPrimerEntrega, cantidadEntregas, periodicidad, entregas, id);
+        empresa.agregarPedido(unPedido);
+        System.out.println("Se creo el pedido");
         return fechas;
     }
 
 
-    //Para calcular las fechas de las entregas del pedido TODO cambiar a private
-    public ArrayList<Date> calcularFechas(Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad period) {
+    //Para calcular las fechas de las entregas del pedido
+    private ArrayList<Date> calcularFechas(Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad period) {
         //Genero las fechas siguientes de entrega dependiendo la periodicidad y cant de entregas
         ArrayList<Date> fechas = new ArrayList<>();
         fechas.add(fechaPrimerEntrega);
@@ -82,7 +84,6 @@ public class Planificador {
 
     //Para generar 1 entrega por cada fecha (estas se agregan al pedido)
     private ArrayList<Entrega> generarEntregas(ArrayList<Date> fechas) {
-        //Genero una entrega por cada fecha
         ArrayList<Entrega> entregas = new ArrayList<>();
         for(Date unaFecha : fechas) {
             Entrega nuevaEntrega = new Entrega(unaFecha);
@@ -96,6 +97,7 @@ public class Planificador {
     private String generarNuevoId() {
         return UUID.randomUUID().toString();
     }
+
 
 
 /*

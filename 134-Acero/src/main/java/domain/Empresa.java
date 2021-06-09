@@ -7,10 +7,11 @@ import java.util.ArrayList;
 public class Empresa {
 
     private static ArrayList<Articulo> articulos;
-    private ArrayList<Integer> clientes = new ArrayList<Integer>();
+    private ArrayList<Integer> clientes = new ArrayList<>();
+    private ArrayList<Pedido> pedidos = new ArrayList<>();
 
     public Boolean validarCliente(int codCli){
-        clientes.add(3);
+        this.clientes.add(3);
         return clientes.contains(codCli);
     }
 
@@ -20,4 +21,9 @@ public class Empresa {
                 .findFirst()
                 .orElseThrow( () -> new ArticuloNoEncontradoException(String.format("No existe un articulo con el codigo %d", cod_articulo)));
     }
+
+    public void agregarPedido(Pedido unPedido) {
+        this.pedidos.add(unPedido);
+    }
+
 }
