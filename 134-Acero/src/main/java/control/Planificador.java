@@ -2,13 +2,11 @@ package control;
 
 import domain.*;
 
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.InputMismatchException;
+import java.util.*;
 
 public class Planificador {
+
+    /*  ----    Singleton   ----    */
 
     private static Planificador instance = null;
 
@@ -21,69 +19,52 @@ public class Planificador {
         return instance;
     }
 
-    //////
-
     private Empresa empresa = new Empresa();
 
+
+    /*  -----   Metodos     -----   */
+
+
+    //Para validar al cliente
     public boolean validarCliente(int cod_cliente) {
         return empresa.validarCliente(cod_cliente);
     }
 
-   /* public ArrayList<Date> planificar(int cod_cliente, Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad){
 
-        //Calculo las fechas de entrega
+    //Para general el pedido (y varias entregas por un mismo pedido)
+    public ArrayList<Date> planificar(int cod_cliente, Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad) {
         ArrayList<Date> fechas = this.calcularFechas(fechaPrimerEntrega, cantidadEntregas, periodicidad);
-
-        //Una vez que tengo las fechas, agrego una entrega por cada fecha
-        ArrayList<Entrega> entregas = this.generarEntregas(fechas);
-
-        //Genero el id
-        int id = this.generarNuevoId();
-
-        //Creo el pedido
-
+        ArrayList<Entrega> entregas = this.generarEntregas(fechas); //Una vez que tengo las fechas, agrego una entrega por cada fecha
+        String id = this.generarNuevoId(); //Genero el id y creo el pedido
         Pedido unPedido = new Pedido(fechaPrimerEntrega, cantidadEntregas, periodicidad, entregas, id);
-
         return fechas;
     }
 
 
-/*
-    private ArrayList<Entrega> generarEntregas(ArrayList<Date> fechas) {
-        //Genero las entregas segun cada fecha
-        ArrayList<Entrega> entregas = new ArrayList<>();
-        for(Date unaFecha : fechas){
-            Entrega nuevaEntrega = new Entrega(unaFecha);
-            entregas.add(nuevaEntrega);
-        }
-        return entregas;
-    }
-
-    private ArrayList<Date> calcularFechas(Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad periodicidad) {
+    //Para calcular las fechas de las entregas del pedido TODO cambiar a private
+    public ArrayList<Date> calcularFechas(Date fechaPrimerEntrega, int cantidadEntregas, Periodicidad period) {
         //Genero las fechas siguientes de entrega dependiendo la periodicidad y cant de entregas
         ArrayList<Date> fechas = new ArrayList<>();
+        fechas.add(fechaPrimerEntrega);
         Date fechaActual = fechaPrimerEntrega;
-        for(int i=0; i<cantidadEntregas; i++){
-            if(periodicidad == Periodicidad.SEMANAL){
-                fechaActual = this.sumarRestarDiasFecha(fechaActual, 7);
-                fechas.add(fechaActual);
-            }else if(periodicidad == Periodicidad.UNICAVEZ){
-                fechas.add(fechaActual);
-            }else if(periodicidad == Periodicidad.MENSUAL){
-                fechaActual = this.sumarRestarMesesFecha(fechaActual, 1);
-                fechas.add(fechaActual);
+        for(int i = 1; i < cantidadEntregas; i++) {
+            switch(period) {
+                case UNICAVEZ:
+                    fechas.add(fechaActual);
+                    break;
+                case SEMANAL:
+                    fechaActual = this.sumarRestarDiasFecha(fechaActual, 7);
+                    fechas.add(fechaActual);
+                    break;
+                case MENSUAL:
+                    fechaActual = this.sumarRestarMesesFecha(fechaActual, 1);
+                    fechas.add(fechaActual);
+                    break;
             }
         }
         return fechas;
     }
 
-    private int generarNuevoId() {
-        //Genero el id del pedido. CREO que pidiendolo asi siempre habria uno distinto, porque sino no tenemos donde chequear
-        return (int)System.currentTimeMillis();
-    }*/
-
-
-/*
     public Date sumarRestarDiasFecha(Date fecha, int dias){
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(fecha); // Configuramos la fecha que se recibe
@@ -98,6 +79,26 @@ public class Planificador {
         return calendar.getTime(); // Devuelve el objeto Date con los nuevos días añadidos
     }
 
+
+    //Para generar 1 entrega por cada fecha (estas se agregan al pedido)
+    private ArrayList<Entrega> generarEntregas(ArrayList<Date> fechas) {
+        //Genero una entrega por cada fecha
+        ArrayList<Entrega> entregas = new ArrayList<>();
+        for(Date unaFecha : fechas) {
+            Entrega nuevaEntrega = new Entrega(unaFecha);
+            entregas.add(nuevaEntrega);
+        }
+        return entregas;
+    }
+
+
+    //Para generar el id del pedido
+    private String generarNuevoId() {
+        return UUID.randomUUID().toString();
+    }
+
+
+/*
 
     public ArrayList<Envase> buscarEnvasesDisponiblesParaElProducto(int cod_articulo) {
         Articulo articulo = empresa.buscarArticuloSegun(cod_articulo);

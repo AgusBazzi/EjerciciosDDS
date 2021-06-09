@@ -9,20 +9,20 @@ import java.util.Optional;
 
 public class Pedido {
 
-    private int id;
+    private String id;
     private Date fechaPrimerEntrega;
     private int cantidadEntregas;
     private Periodicidad periodicidad;
     private ArrayList<Entrega> listaEntregas;
 
-    public Pedido(Date fechaPrimeraEntrega, int cantidadEntregas, Periodicidad periodicidad, ArrayList<Entrega> listaEntregas, int id){
+    public Pedido(Date fechaPrimeraEntrega, int cantidadEntregas, Periodicidad periodicidad, ArrayList<Entrega> listaEntregas, String id){
         this.fechaPrimerEntrega = fechaPrimeraEntrega;
         this.cantidadEntregas = cantidadEntregas;
         this.periodicidad = periodicidad;
         this.id = id;
     }
 
-    public int getId(){
+    public String getId(){
         return id;
     }
 

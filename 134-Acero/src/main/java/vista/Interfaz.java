@@ -87,6 +87,7 @@ public class Interfaz {
                     case 2:
                         period = Periodicidad.MENSUAL;
                         validado = true;
+                        break;
                     default:
                         System.out.print("Error: el numero ingresado debe ser 0 - 1 - 2\n");
                 }
@@ -97,6 +98,15 @@ public class Interfaz {
         }
 
         //ArrayList<Date> fechas = planificador.planificar(cod_cliente, fechaPrimerEntrega, cantEntregas, period);
+
+        //ArrayList<Date> fechass = planificador.calcularFechas(fechaPrimerEntrega, cantEntregas, period);
+/*
+        for (int i = 0; i < fechass.size(); i++) {
+            Date a = fechass.get(i);
+            String b = a.toString();
+            System.out.println(b);
+        }*/
+
         
 /*
         for(Date unaFecha: fechas){
