@@ -8,7 +8,11 @@ import java.util.Map;
 
 public class GestorSuscriptores {
 
-    private Map<String, List<Suscriptor>> suscriptores = new HashMap<>();
+    private Map<String, List<Suscriptor>> suscriptores;
+
+    public GestorSuscriptores(){
+        suscriptores = new HashMap<>();
+    }
 
     public void agregarSuscriptor(String tipo, Suscriptor unSuscriptor){
         List<Suscriptor> observadores = suscriptores.get(tipo);

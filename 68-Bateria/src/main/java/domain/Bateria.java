@@ -1,6 +1,7 @@
 package domain;
 
 import suscripciones.notificador.GestorSuscriptores;
+import suscripciones.suscriptor.Suscriptor;
 
 public class Bateria {
 
@@ -9,7 +10,20 @@ public class Bateria {
     private int nivelDeCarga;
     private int minutosRestantes;
 
-    private final GestorSuscriptores gestorSuscriptores = new GestorSuscriptores();
+    private GestorSuscriptores gestorSuscriptores;
+
+    public Bateria(boolean conectado, boolean cargando, int nivelDeCarga, int minutosRestantes){
+        this.setConectado(conectado);
+        this.setCargando(cargando);
+        this.setMinutosRestantes(minutosRestantes);
+        this.setNivelDeCarga(nivelDeCarga);
+        this.gestorSuscriptores = new GestorSuscriptores()
+    }
+
+    public void agregarSuscriptor(String tipo, Suscriptor unSuscriptor){
+        gestorSuscriptores.agregarSuscriptor(tipo, unSuscriptor);
+    }
+
 
     //Getters y Setters
     public boolean isConectado() {
