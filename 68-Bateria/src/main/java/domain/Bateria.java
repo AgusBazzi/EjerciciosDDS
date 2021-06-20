@@ -15,9 +15,9 @@ public class Bateria {
     public Bateria(boolean conectado, boolean cargando, int nivelDeCarga, int minutosRestantes){
         this.setConectado(conectado);
         this.setCargando(cargando);
-        this.setMinutosRestantes(minutosRestantes);
-        this.setNivelDeCarga(nivelDeCarga);
-        this.gestorSuscriptores = new GestorSuscriptores()
+        this.minutosRestantes = minutosRestantes;
+        this.nivelDeCarga = nivelDeCarga;
+        this.gestorSuscriptores = new GestorSuscriptores("Carga", "Tiempo");
     }
 
     public void agregarSuscriptor(String tipo, Suscriptor unSuscriptor){
@@ -48,7 +48,7 @@ public class Bateria {
 
     public void setNivelDeCarga(int nivelDeCarga) {
         this.nivelDeCarga = nivelDeCarga;
-        gestorSuscriptores.notificar("Carga",nivelDeCarga);
+        gestorSuscriptores.notificar("Carga", nivelDeCarga);
     }
 
     public int getMinutosRestantes() {
