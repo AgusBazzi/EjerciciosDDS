@@ -39,4 +39,9 @@ public class GestorSuscriptores {
         }
     }
 
+    //Agrego este metodo para los tests
+    public int cantSuscriptoresSegunTema(String tipo) {
+        return suscriptores.get(tipo).size();
+    }
+
 }

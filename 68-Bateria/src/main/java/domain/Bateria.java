@@ -3,6 +3,8 @@ package domain;
 import suscripciones.notificador.GestorSuscriptores;
 import suscripciones.suscriptor.Suscriptor;
 
+import java.util.ArrayList;
+
 public class Bateria {
 
     private boolean conectado;
@@ -20,8 +22,18 @@ public class Bateria {
         this.gestorSuscriptores = new GestorSuscriptores("Carga", "Tiempo");
     }
 
+
+    //Metodos relacionados al gestor de suscriptores
     public void agregarSuscriptor(String tipo, Suscriptor unSuscriptor){
         gestorSuscriptores.agregarSuscriptor(tipo, unSuscriptor);
+    }
+
+    public int cantSuscriptoresSegunTema(String tipo){
+        return gestorSuscriptores.cantSuscriptoresSegunTema(tipo);
+    }
+
+    public void eliminarSuscriptor(String tipo, Suscriptor unSuscriptor){
+        gestorSuscriptores.eliminarSuscriptor(tipo, unSuscriptor);
     }
 
 
@@ -46,20 +58,18 @@ public class Bateria {
         return nivelDeCarga;
     }
 
+    public int getMinutosRestantes() {
+        return minutosRestantes;
+    }
+
     public void setNivelDeCarga(int nivelDeCarga) {
         this.nivelDeCarga = nivelDeCarga;
         gestorSuscriptores.notificar("Carga", nivelDeCarga);
-    }
-
-    public int getMinutosRestantes() {
-        return minutosRestantes;
     }
 
     public void setMinutosRestantes(int minutosRestantes) {
         this.minutosRestantes = minutosRestantes;
         gestorSuscriptores.notificar("Tiempo", minutosRestantes);
     }
-
-
 
 }
