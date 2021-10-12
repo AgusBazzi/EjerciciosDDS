@@ -17,4 +17,8 @@ public class EstandarService {
 		return estandarRepo.findById(id);
 	}
 
+	public Iterable<Estandar> findAll() {
+		return estandarRepo.findAll();
+	}
+
 }

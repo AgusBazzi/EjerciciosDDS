@@ -13,4 +13,6 @@ public interface EstandarRepo extends CrudRepository<Estandar, Long> {
 
 	Optional<Estandar> findById(Long id);
 
+	Iterable<Estandar> findAll();
+
 }

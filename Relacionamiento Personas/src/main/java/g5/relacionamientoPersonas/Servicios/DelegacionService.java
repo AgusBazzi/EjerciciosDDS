@@ -17,4 +17,5 @@ public class DelegacionService {
 		return delegacionRepo.findDelegaciones(id);
 	}
 
+	public Iterable<Delegacion> findAll() { return delegacionRepo.findAll(); }
 }
