@@ -2,7 +2,9 @@ package g5.relacionamientoPersonas.Seguridad;
 
 import g5.relacionamientoPersonas.Business.Delegacion;
 import g5.relacionamientoPersonas.Business.EnEspera;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "estandar")
+@NoArgsConstructor
 public class Estandar extends Usuario{
 
 	private String dni;
@@ -29,8 +32,8 @@ public class Estandar extends Usuario{
 	private List<Delegacion> delegaciones;
 
 
-	public Estandar(Long id, String usuario, String password, Estandar estandar, String dni, String nombre, String apellido, Date fechaDeNacimiento, String ciudad, String localidadResidencia, String foto) {
-		super(id, usuario, password);
+	public Estandar(String usuario, String password, String dni, String nombre, String apellido, Date fechaDeNacimiento, String ciudad, String localidadResidencia, String foto) {
+		super(usuario, password);
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;

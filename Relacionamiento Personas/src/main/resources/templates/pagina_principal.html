@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head class="head">
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Pagina Principal</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Pagina_Principal/index.css" th:href="@{/Pagina_Principal/index.css}">
+
+</head>
+
+<body>
+
+    <section class="head">
+    
+        <section class="fondo">
+
+            <div class="bienvenido">
+                <p>Bienvenido</p>
+            </div>
+        
+            <div class="formulario-registrar">
+                <div class="registrar">
+                    <input type="boton-registrar" class= "texto-registrar" value="Registrar">
+                </div>
+
+            </div>
+        
+        
+            <div class="formulario-iniciar-sesion">
+                <div class="iniciar-sesion">
+                    <input type=".boton-iniciar-sesion" class= "texto-boton-iniciar-sesion" value="Iniciar Sesión">
+                </div>
+                
+            </div>
+    
+            <div class="imagen">
+                <img src="../static/Pagina_Principal/img/argentina.png" th:src="@{/Pagina_Principal/img/argentina.png}" alt="Presidencia de la Nacion">
+            </div>
+
+        </section>
+
+    </section>
+
+</body>

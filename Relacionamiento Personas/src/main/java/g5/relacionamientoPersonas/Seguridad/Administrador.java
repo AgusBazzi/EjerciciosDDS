@@ -8,8 +8,8 @@ import lombok.Setter;
 
 public class Administrador extends Usuario{
 
-	public Administrador(Long id, String usuario, String password) {
-		super(id, usuario, password);
+	public Administrador(String usuario, String password) {
+		super(usuario, password);
 	}
 
 	public void verListadoPersonas() {} // no es void

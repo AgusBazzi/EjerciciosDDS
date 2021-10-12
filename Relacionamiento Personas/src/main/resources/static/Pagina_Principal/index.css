@@ -1,0 +1,160 @@
+/* Pagina_Principal */
+.contenedor-base{
+position: absolute;
+width: 100%;
+height: 100%;
+
+background: #FFFFFF;
+}
+
+/* Formulario */
+.formulario-iniciar-sesion{
+position: absolute;
+width: 408px;
+height: 119.83px;
+left: 916px;
+top: 392px;
+}
+
+
+/* Iniciar */
+.iniciar-sesion{
+position: absolute;
+width: 408px;
+height: 119.83px;
+left: 916px;
+top: 392px;
+}
+
+
+/* Boton */
+.boton-iniciar-sesion{
+position: absolute;
+width: 408px;
+height: 108px;
+left: 916px;
+top: 392px;
+
+background: #7644B7;
+border-radius: 48px;
+}
+
+/* texto */
+.texto-boton-iniciar-sesion{
+position: absolute;
+width: 408px;
+height: 96.83px;
+left: calc(50% - 408px/2 + 400px);
+top: calc(50% - 96.83px/2 + 13.41px);
+
+font-family: Quando;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 45px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+
+/* Formulario */
+.formulario-registrar{
+position: absolute;
+width: 408px;
+height: 124.83px;
+left: 916px;
+top: 534px;
+}
+
+
+/* Iniciar */
+.registrar{
+position: absolute;
+width: 408px;
+height: 124.83px;
+left: 916px;
+top: 534px;
+}
+
+
+/* Boton */
+.boton-registrar{
+position: absolute;
+width: 408px;
+height: 108px;
+left: 916px;
+top: 534px;
+
+background: #7644B7;
+border-radius: 48px;
+}
+
+/* texto */
+.texto-registrar{
+position: absolute;
+width: 408px;
+height: 96.83px;
+left: 916px;
+top: 562px;
+
+font-family: Quando;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 45px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+/* Head */
+head {
+position: absolute;
+width: 1441px;
+height: 902.8px;
+left: -1px;
+top: -0.8px;
+}
+
+
+/* Fondo */
+.fondo {
+position: relative;
+width: 1441px;
+height: 902.8px;
+left: -1px;
+top: -0.8px;
+
+background: #7644B7;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* image 3 */
+.imagen {
+position: relative;
+width: 920px;
+height: 116px;
+left: 499px;
+top: 741px;
+
+background: url(image.png);
+}
+
+/* BIENVENIDO */
+.bienvenido{
+position: absolute;
+width: 853px;
+height: 171px;
+left: 73px;
+top: 85px;
+
+font-family: Quando;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 120px;
+
+color: #FFFFFF;
+}
