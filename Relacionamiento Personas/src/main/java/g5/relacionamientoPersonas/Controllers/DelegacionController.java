@@ -1,8 +1,8 @@
 package g5.relacionamientoPersonas.Controllers;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import g5.relacionamientoPersonas.Business.Delegacion;
-import g5.relacionamientoPersonas.Seguridad.Estandar;
-import g5.relacionamientoPersonas.Servicios.EstandarService;
+import g5.relacionamientoPersonas.Servicios.DelegacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Optional;
 
 @Controller
-public class EstandarController {
+public class DelegacionController {
 
 	@Autowired
-	private EstandarService serviceEstandar;
+	private DelegacionService delegacionService;
 
 	@ResponseBody
-	@RequestMapping("/home/id")
-	public Optional<Estandar> getDatosDeUsuario(@RequestParam Long id){
-		return serviceEstandar.findById(id);
+	@RequestMapping("/home/notificaciones/id")
+	public Optional<Delegacion> getNotificaciones(@RequestParam Long id){
+		return delegacionService.findDelegacionById(id);
 	}
-
 
 }

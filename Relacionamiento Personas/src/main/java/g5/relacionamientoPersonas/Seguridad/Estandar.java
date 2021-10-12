@@ -29,6 +29,7 @@ public class Estandar extends Usuario{
 	private String foto;
 
 	@OneToMany(mappedBy = "usuarioQueDelega")
+	@Transient
 	private List<Delegacion> delegaciones;
 
 
