@@ -4,11 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Home (Estándar)</title>
-    <link rel="stylesheet" href="../static/Home_Estandar/Home_Estandar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Resources/normalize.css" th:href="@{/Resources/normalize.css}">
+    <link rel="stylesheet" href="../static/Home_Estandar/Home_Estandar.css" th:href="@{/Home_Estandar/Home_Estandar.css}">
 </head>
 <body>
+<header>
+    <div class="contenedor-base">
+
+        <div class="contenedor-texto-header">
+            <div class="texto">
+                <h1 class="titulo-principal">Home</h1>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="/Home_Estandar">Home</a>
+            <a href=".">Iniciar Sesion</a>
+        </nav>
+    </div>
+</header>
+
+<section class="main">
+    <div class="contenedor-menu">
+        <nav class="menu">
+            <a href="/Realizar_Delegacion">Realizar Delegacion</a>
+            <a href="/Notificaciones">Notificaciones</a>
+            <a href="/Actualizar_Usuario">Actualizar usuario</a>
+            <a href="/Reporte_Personas">Reporte Personas</a>
+            <a href="/Reporte_Delegaciones">Reporte Delegaciones</a>
+        </nav>
+    </div>
+    <div class="contenedor">
+
+        <div class="dni">
+            <div class="foto">
+                <img src="../static/Home_Estandar/img/persona.png"   th:src="@{/Home_Estandar/img/persona.png}" alt="">
+            </div>
+            <div class="info">
+                <p>Nombre: Juan</p>
+                <p>Apellido: Perez</p>
+                <p>Fecha de Nacimiento: 11/12/00</p>
+                <p>Ciudad: CABA</p>
+                <p>Localidad: Devoto</p>
+            </div>
+        </div>
 
 
+
+        <div class="argentina">
+            <img src="../static/Home_Estandar/img/argentina.png" th:src="@{/Home_Estandar/img/argentina.png}" alt="">
+        </div>
+
+    </div>
+</section>
 
 </body>
 </html>
