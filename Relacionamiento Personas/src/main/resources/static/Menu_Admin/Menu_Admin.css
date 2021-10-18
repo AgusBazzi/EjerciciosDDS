@@ -1,0 +1,83 @@
+
+/* Letras */
+
+.sub-titulo {
+    align-items: center;
+    text-align: center;
+    color: #C04335;
+}
+
+.texto-simple {
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+
+/* HEADER */
+
+header {
+    background-color: #7644B7;
+    height: 20%;
+
+}
+
+header .contenedor-base{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 30px;
+}
+
+header .menu {
+    margin: 40px 0;
+    text-align: left;
+}
+
+header .menu a {
+    margin-right: 40px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 30px;
+}
+
+header .menu a:hover {
+    border-bottom: 2px solid white;
+}
+
+header .contenedor-texto-header .texto {
+    text-align: left;
+    max-width: 490px;
+}
+
+header .contenedor-texto-header .texto .titulo-principal {
+    color: #F2F2F2;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    margin: 0;
+}
+
+.contenedor-botones {
+	width: 800px;
+	height: 300px;
+    margin: 250px auto 300px auto;
+    text-align: center;
+}
+
+.botonVioleta {
+  	background: white;
+  	border: 2px solid #3D3D3D;
+  	border-radius: 100px;
+  	padding: 30px 60px;
+	font-size: 24px;
+	margin-right: 10px;
+}
+
+.botonVioleta:hover {
+  	color: #7011B2;
+  	border: 2px solid #7011B2;
+}
