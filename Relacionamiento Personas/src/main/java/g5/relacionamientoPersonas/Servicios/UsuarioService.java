@@ -6,6 +6,7 @@ import g5.relacionamientoPersonas.Seguridad.Administrador;
 import g5.relacionamientoPersonas.Seguridad.Estandar;
 import g5.relacionamientoPersonas.utils.UserSignIn;
 import g5.relacionamientoPersonas.utils.UsrRDTO;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,14 @@ import java.util.Calendar;
 import java.util.Optional;
 
 @Service
+@Data
 public class UsuarioService {
 
     @Autowired
     private UsuarioRepo usuarioRepo;
+
+    @Autowired
+    private EstandarRepo estandarRepo;
 
     public long iniciar(String nombre, String password){
 
@@ -28,8 +33,7 @@ public class UsuarioService {
 
         UsrRDTO u = null;
         try{
-            u = usuarioRepo.findByUsuario(body.getUsuario())
-                    .orElseThrow(() -> new Exception());
+            u = usuarioRepo.findByUsuario(body.getUsuario()).get().toRDTO();
         }catch(Exception e){
             System.out.println("User does not exist");
         }
@@ -39,11 +43,6 @@ public class UsuarioService {
         }
 
         return u;
-        //return save(u);
-    }
-
-    public UsrRDTO toRDTO(){
-        return usuarioRepo.findByUsuario()
     }
 
 }

@@ -1,7 +1,9 @@
 package g5.relacionamientoPersonas.Seguridad;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import g5.relacionamientoPersonas.Business.Delegacion;
 import g5.relacionamientoPersonas.Business.EnEspera;
+import g5.relacionamientoPersonas.utils.UsrRDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,8 +28,8 @@ public class Estandar extends Usuario{
 	private String localidadResidencia;
 	private String foto;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "usuarioQueDelega")
-	@Transient
 	private Set<Delegacion> delegaciones;
 
 

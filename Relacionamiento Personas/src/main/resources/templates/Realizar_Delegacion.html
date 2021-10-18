@@ -1,12 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Realizar Delegación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/Realizar_Delegacion/Realizar_Delegacion.css">
+    <link rel="stylesheet" href="../static/Resources/normalize.css">
+    <link rel="stylesheet" href="../static/Resources/letras.css">
 </head>
 <body>
+
+<header>
+    <div class="contenedor-base">
+
+        <nav class="menu">
+            <a href="">Home</a>
+            <a href="">Cerrar Sesión</a>
+        </nav>
+
+
+    </div>
+
+</header>
+
+<section class="main">
+
+    <div class="delegacion">
+
+        <div class="delegacion-texto">
+            <h1 class="sub-titulo">Realizar Delegación</h1>
+
+            <form>
+
+                <div class="contenedor-input">
+                    <div class="input">
+                        <p class="texto-boton">Nombre Persona Asignada</p>
+                        <input type="text" class="input-completo" name="nombre" required>
+                    </div>
+
+                    <div class="input">
+                        <p class="texto-boton">DNI Persona Asignada</p>
+                        <input type="text" class="input-completo" name="dni" required>
+                    </div>
+                </div>
+
+                <div class="contenedor-botones">
+                    <input class="botonVioleta" type="submit" value="Delegar">
+
+                    <input class="botonVioleta" type="button" value="Cancelar">
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+
+        <div class="delegacion-imagen">
+            <img src="../static/Realizar_Delegacion/img/img.png"   th:src="@{/Realizar_Delegacion/img/img.png}" width=450 height=250 alt="img">
+        </div>
+    </div>
+
+    <section class="footer">
+
+    </section>
+
+</section>
 
 
 

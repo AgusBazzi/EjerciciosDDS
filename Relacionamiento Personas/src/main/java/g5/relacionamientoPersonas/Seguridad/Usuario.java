@@ -1,5 +1,6 @@
 package g5.relacionamientoPersonas.Seguridad;
 
+import g5.relacionamientoPersonas.utils.UsrRDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,4 +32,7 @@ public abstract class Usuario {
 	public void cerrarSesion(){}
 
 
+	public UsrRDTO toRDTO(){
+		return new UsrRDTO(this.id, this.usuario, this.password);
+	}
 }

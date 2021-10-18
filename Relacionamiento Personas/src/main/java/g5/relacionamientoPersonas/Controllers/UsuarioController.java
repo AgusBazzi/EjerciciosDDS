@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.Set;
 
@@ -22,16 +20,9 @@ public class UsuarioController {
     @Autowired
     UsuarioService usrSvc;
 
-    @PostMapping(value="/signupadmin")
-    public ResponseEntity<UsrAdministradorRDTO> signupUsrAdministrador(
-            @RequestBody @Valid UsrAdministradorCDTO body
-    ) {
-        return null;
-        //return ResponseEntity.status(HttpStatus.CREATED).body(usrSvc.create(body));
-    }
 
     @PostMapping(value="/signupest")
-    public ResponseEntity<UsrAdministradorRDTO> signupUsrEstandar(
+    public ResponseEntity<UsrEstandarRDTO> signupUsrEstandar(
             @RequestBody @Valid UsrEstandarCDTO body
     ) {
         return null;
@@ -45,12 +36,12 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(usrSvc.signin(body));
     }
 
-    @GetMapping(value = "/my/delegaciones")
+    @GetMapping(value = "/delegaciones/{id}")
     public ResponseEntity<Set<Delegacion>> mostrarDelegaciones(
-            @RequestBody @Valid UsrRDTO body
+            @PathVariable Long id
     ){
-        return ResponseEntity.ok(
-                usrSvc body.getUsuario()
-                );
+        Set<Delegacion> delegaciones =
+                usrSvc.getEstandarRepo().findById(id).get().getDelegaciones();
+        return ResponseEntity.ok(delegaciones);
     }
 }

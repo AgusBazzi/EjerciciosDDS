@@ -19,6 +19,6 @@ public interface UsuarioRepo extends CrudRepository<Usuario,Long> {
     long iniciar(String usuario, String password);
 
     //Deberia poder hacerse un usuario generico para el login o bien tener dos metodos distintos para cada uno y poder conocerlos al momento de hacer ese mismo signin
-    Optional<UsrRDTO> findByUsuario(String usuario);
+    Optional<Usuario> findByUsuario(String usuario);
 
 }

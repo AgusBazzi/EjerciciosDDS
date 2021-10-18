@@ -18,7 +18,7 @@ public class DelegacionController {
 	private DelegacionService delegacionService;
 
 	@ResponseBody
-	@RequestMapping("/home/notificaciones/id")
+	@RequestMapping("/home/notificaciones/{id}")
 	public Optional<Delegacion> getNotificaciones(@RequestParam Long id){
 		return delegacionService.findDelegacionById(id);
 	}
