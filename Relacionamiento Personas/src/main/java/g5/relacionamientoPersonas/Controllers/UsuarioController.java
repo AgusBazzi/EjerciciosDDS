@@ -18,16 +18,10 @@ public class UsuarioController {
     @Autowired
     UsuarioService usrSvc;
 
-    @PostMapping
-    public ResponseEntity<UsrAdministradorRDTO> signupUsrAdministrador(
-            @RequestBody @Valid UsrAdministradorCDTO body
-    ) {
-        return null;
-        //return ResponseEntity.status(HttpStatus.CREATED).body(usrSvc.create(body));
-    }
+
 
     @PostMapping
-    public ResponseEntity<UsrAdministradorRDTO> signupUsrEstandar(
+    public ResponseEntity<UsrEstandarRDTO> signupUsrEstandar(
             @RequestBody @Valid UsrEstandarCDTO body
     ) {
         return null;
@@ -40,4 +34,5 @@ public class UsuarioController {
     ) {
         return ResponseEntity.status(HttpStatus.CREATED).body(usrSvc.signin(body));
     }
+
 }

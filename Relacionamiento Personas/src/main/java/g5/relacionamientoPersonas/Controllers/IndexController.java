@@ -13,7 +13,6 @@ public class IndexController {
     @Autowired
     UsuarioService userService;
 
-
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("message", "Estas en la página principal.");
@@ -50,12 +49,15 @@ public class IndexController {
     public String actualizarUsuario() {
         return "Home_Estandar";
     }
+
     @RequestMapping("/Reporte_Personas")
     public String reportePersonas() {
         return "Home_Estandar";
     }
+
     @RequestMapping("/Reporte_Delegaciones")
     public String reporteDelegaciones() {
         return "Home_Estandar";
     }
+
 }
