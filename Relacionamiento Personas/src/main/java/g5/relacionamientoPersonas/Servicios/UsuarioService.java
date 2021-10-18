@@ -42,4 +42,8 @@ public class UsuarioService {
         //return save(u);
     }
 
+    public UsrRDTO toRDTO(){
+        return usuarioRepo.findByUsuario()
+    }
+
 }

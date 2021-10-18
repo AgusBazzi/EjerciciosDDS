@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Getter
 @Setter
@@ -30,7 +28,7 @@ public class Estandar extends Usuario{
 
 	@OneToMany(mappedBy = "usuarioQueDelega")
 	@Transient
-	private List<Delegacion> delegaciones;
+	private Set<Delegacion> delegaciones;
 
 
 	public Estandar(String usuario, String password, String dni, String nombre, String apellido, Date fechaDeNacimiento, String ciudad, String localidadResidencia, String foto) {
@@ -42,7 +40,7 @@ public class Estandar extends Usuario{
 		this.ciudad = ciudad;
 		this.localidadResidencia = localidadResidencia;
 		this.foto = foto;
-		this.delegaciones = new ArrayList<>();
+		this.delegaciones = Collections.emptySet();
 	}
 
 	public void autorizarA(Estandar usuarioEstandar) {

@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 public class UserSignIn {
 
     @NotNull
-    @Email
     String usuario;
     @NotNull
     @Length(min = 4, max = 16)
