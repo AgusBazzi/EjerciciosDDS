@@ -35,33 +35,38 @@
 
             <form>
 
-                <div class="contenedor-input">
-                    <div class="input">
-                        <p class="texto-boton">Nombre Persona Asignada</p>
-                        <input type="text" class="input-completo" name="nombre" required>
+                <div class="contenedor-input-botones">
+
+                    <div class="contenedor-input">
+                        <div class="input">
+                            <p class="texto-boton">Nombre Persona Asignada</p>
+                            <input type="text" class="input-completo" name="nombre" required>
+                        </div>
+
+                        <br>
+
+                        <div class="input">
+                            <p class="texto-boton">DNI Persona Asignada</p>
+                            <input type="text" class="input-completo" name="dni" required>
+                        </div>
+
+                        <br>
+
+                        <div class="botones">
+                            <input class="botonVioleta" type="submit" value="Delegar">
+                            <input class="botonVioleta-cancelar" type="button" value="Cancelar">
+                        </div>
                     </div>
 
-                    <div class="input">
-                        <p class="texto-boton">DNI Persona Asignada</p>
-                        <input type="text" class="input-completo" name="dni" required>
-                    </div>
                 </div>
-
-                <div class="contenedor-botones">
-                    <input class="botonVioleta-cancelar" type="button" value="Cancelar">
-
-                    <input class="botonVioleta" type="submit" value="Delegar">
-                </div>
-
 
             </form>
 
         </div>
 
 
-
         <div class="delegacion-imagen">
-            <img src="../static/Realizar_Delegacion/img/img.png"   th:src="@{/Realizar_Delegacion/img/img.png}" width=450 height=250 alt="img">
+            <img src="../static/Realizar_Delegacion/img/img.png"   th:src="@{/Realizar_Delegacion/img/img.png}" width=550 height=350 alt="img">
         </div>
     </div>
 
