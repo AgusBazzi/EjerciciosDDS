@@ -1,0 +1,78 @@
+.contenedor-base {
+  	width: 100%;
+  	margin: auto;
+  	overflow: hidden;
+}
+
+/* HEADER */
+
+header {
+    background-color: #7644B7;
+}
+
+header .menu {
+  	margin: 40px 0;
+  	text-align: right;
+}
+
+header .menu a {
+  	margin-right: 40px;
+  	color: white;
+  	font-size: 24px;
+  	text-decoration: none;
+  	border-bottom: 2px solid transparent;
+  	padding-bottom: 10px;
+}
+
+header .menu a:hover {
+	border-bottom: 2px solid white;
+}
+
+.delegacion {
+	display: flex;
+	padding: 50px 50px 50px 50px;
+	justify-content: center;
+}
+
+.delegacion .delegacion-texto {
+	margin-right: 50px;
+}
+
+.delegacion .delegacion-texto .contenedor-input .input{
+	margin-top: 10px;
+	display: flex;
+
+}
+
+.delegacion .delegacion-texto .contenedor-input .input-completo {
+	background: #FFFFFF;
+	border: 4px solid #AEC4E1;
+	box-sizing: border-box;
+	border-radius: 12px;
+	margin-left: 5px;
+
+}
+
+.delegacion .delegacion-texto .contenedor-botones {
+	align-items: center;
+}
+
+.botonVioleta {
+  	background: white;
+  	border: 2px solid #3D3D3D;
+  	border-radius: 50px;
+  	padding: 10px 40px;
+	font-size: 24px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+.botonVioleta:hover {
+  	color: #7011B2;
+  	border: 2px solid #7011B2;
+}
+
+.footer {
+	background-color: #7644B7;
+	padding: 80px;
+}
