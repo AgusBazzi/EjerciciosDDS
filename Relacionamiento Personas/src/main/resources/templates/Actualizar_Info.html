@@ -9,81 +9,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/Resources/normalize.css">
+    <link rel="stylesheet" href="../static/Resources/Boton.css">
     <link rel="stylesheet" href="../static/Resources/letras.css">
 </head>
 <body>
 
-<header>
-    <div class="contenedor-base">
+    <header>
+        <div class="contenedor-base">
+            <nav class="menu">
+                <a href="" class="sub-titulo">Home</a>
+                <a href="" class="sub-titulo">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
 
-        <nav class="menu">
-            <a href="" class="sub-titulo">Home</a>
-            <a href="" class="sub-titulo">Cerrar Sesión</a>
-        </nav>
+    <section class="main">
 
+        <div class="contenedor-base">
 
-    </div>
+            <p class="subtitulo">Actualizar Datos</p>
 
-</header>
+            <div class="contenedor-datos-foto">
 
-<section class="main">
-
-    <div class="datosPersonales">
-
-        <p class="subtitulo">Actualizar Datos</p>
-
-        <div class="contenedor-datos-foto">
-
-            <div class="datos">
-                <form>
-                    <div class="contenedor-input">
-
+                <div class="datos">
+                    <form>
                         <div class="text-input">
-                            <div class="texto-boton">
+                            <div class="texto-simple">
                                 <label>Fecha de Nacimiento</label>
                             </div>
                             <input type="date" class="input-campo" name="nacimiento">
                         </div>
                         <br>
                         <div class="text-input">
-                            <div class="texto-boton">
+                            <div class="texto-simple">
                                 <label>Ciudad</label>
                             </div>
                             <input type="text" class="input-campo" name="ciudad">
                         </div>
                         <br>
                         <div class="text-input">
-                            <div class="texto-boton">
+                            <div class="texto-simple">
                                 <label>Localidad de Residencia</label>
                             </div>
                             <input type="text" class="input-campo" name="localidad">
                         </div>
+                        <br>
+                        <input class="botonVioleta texto-boton boton" type="submit" value="Actualizar">
+                    </form>
+                </div>
 
-                        <input class="botonVioleta" type="submit" value="Actualizar">
+                <div class="foto">
+                    <img src="../static/Actualizar_Info/img/persona.png"   th:src="@{/Actualizar_Info/img/persona.png}" alt="img">
+                </div>
 
-                    </div>
-
-
-
-                </form>
             </div>
-
-            <div class="foto">
-                <img src="../static/Actualizar_Info/img/persona.png"   th:src="@{/Actualizar_Info/img/persona.png}" width=250 height=250 alt="img">
-            </div>
-
-
         </div>
+    </section>
 
-    </div>
-
-
-
-</section>
-
-<section class="footer">
-
-</section>
+    <section class="footer"></section>
 
 </body>
 </html>
