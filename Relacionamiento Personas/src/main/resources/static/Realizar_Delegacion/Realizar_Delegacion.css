@@ -1,0 +1,121 @@
+.contenedor-base {
+  	width: 100%;
+  	margin: auto;
+  	overflow: hidden;
+}
+
+.subtitulo {
+	 font-family: 'Roboto', sans-serif;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 65px;
+     text-align: right;
+}
+
+/* HEADER */
+
+header {
+    background-color: #7644B7;
+}
+
+header .menu {
+  	margin: 40px 0;
+  	text-align: right;
+}
+
+header .menu a {
+  	margin-right: 40px;
+  	color: white;
+  	font-size: 30px;
+  	text-decoration: none;
+  	border-bottom: 2px solid transparent;
+
+}
+
+header .menu a:hover {
+	border-bottom: 2px solid white;
+}
+
+.main {
+    padding: 50px 0;
+}
+
+.delegacion {
+	display: flex;
+	padding: 50px 50px 50px 50px;
+	justify-content: center;
+}
+
+.delegacion .delegacion-texto {
+	margin-right: 50px;
+}
+
+
+.delegacion .delegacion-texto .contenedor-input-botones {
+
+}
+
+.delegacion .delegacion-texto .contenedor-input-botones .contenedor-input {
+	margin-top: 20px;
+}
+
+
+
+.delegacion .delegacion-texto .contenedor-input-botones .contenedor-input .input{
+	margin-top: 10px;
+	display: flex;
+	float: right;
+}
+
+.delegacion .delegacion-texto .contenedor-input-botones .contenedor-input .input-completo {
+	background: #FFFFFF;
+	border: 4px solid #AEC4E1;
+	box-sizing: border-box;
+	border-radius: 12px;
+	font-size: 24px;
+	margin-left: 10px;
+}
+
+.delegacion .delegacion-texto .contenedor-input-botones .contenedor-input .botones {
+	display: flex;
+	margin-top: 70px;
+	margin-left: 70px;
+}
+
+.botonVioleta {
+  	background: white;
+  	border: 2px solid #3D3D3D;
+  	border-radius: 50px;
+  	padding: 10px 40px;
+	font-size: 24px;
+	margin-top: 30px;
+	margin-right: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.botonVioleta-cancelar{
+  	background: white;
+  	border: 2px solid #808080;
+  	border-radius: 50px;
+  	padding: 10px 40px;
+	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
+	color: #808080;
+	margin-top: 30px;
+}
+
+.botonVioleta:hover {
+  	color: #7011B2;
+  	border: 2px solid #7011B2;
+}
+
+.botonVioleta-cancelar:hover {
+  	color: #7011B2;
+  	border: 2px solid #7011B2;
+}
+
+.footer {
+	background-color: #7644B7;
+	padding: 80px;
+	margin-top: 200px;
+}

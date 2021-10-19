@@ -1,0 +1,68 @@
+.titulo{
+  font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+}
+.main{ height: 100%; margin: 0px; padding: 0px; display: flex;}
+
+.left .titulo{
+  color: white;
+  font-size: 55px;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 8px 16px 20px rgba(0,0,0,0.4);
+}
+.left .texto{
+  width: 80%;
+  text-align: center;
+}
+.right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.right .texto{
+  width: 80%;
+  text-align: center;
+}
+.right .titulo{
+  color: black;
+  font-size: 55px;
+}
+.iniciar-sesion{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-input{
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+}
+
+.text-input .texto{
+  width: 250px;
+}
+
+.text-input input{
+  width: 350px;
+  height: 40px;
+  border-radius: 5px;
+  border: solid #AEC4E1 3px;
+}
+
+.boton {
+    margin-top: 30px;
+}
+

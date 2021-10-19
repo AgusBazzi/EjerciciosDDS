@@ -1,0 +1,11 @@
+.botonVioleta {
+  background: white;
+  border: 2px solid #3D3D3D;
+  border-radius: 50px;
+  padding: 14px 30px;
+}
+
+.botonVioleta:hover {
+  color: #7011B2;
+  border: 2px solid #7011B2;
+}

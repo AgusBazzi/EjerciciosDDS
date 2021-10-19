@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Actualizar Información</title>
+    <link rel="stylesheet" href="../static/Actualizar_Info/Actualizar_Info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Resources/normalize.css">
+    <link rel="stylesheet" href="../static/Resources/Boton.css">
+    <link rel="stylesheet" href="../static/Resources/letras.css">
+</head>
+<body>
+
+    <header>
+        <div class="contenedor-base">
+            <nav class="menu">
+                <a href="" class="sub-titulo">Home</a>
+                <a href="" class="sub-titulo">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main">
+
+        <div class="contenedor-base">
+
+            <p class="subtitulo">Actualizar Datos</p>
+
+            <div class="contenedor-datos-foto">
+
+                <div class="datos">
+                    <form>
+                        <div class="text-input">
+                            <div class="texto-simple">
+                                <label>Fecha de Nacimiento</label>
+                            </div>
+                            <input type="date" class="input-campo" name="nacimiento">
+                        </div>
+                        <br>
+                        <div class="text-input">
+                            <div class="texto-simple">
+                                <label>Ciudad</label>
+                            </div>
+                            <input type="text" class="input-campo" name="ciudad">
+                        </div>
+                        <br>
+                        <div class="text-input">
+                            <div class="texto-simple">
+                                <label>Localidad de Residencia</label>
+                            </div>
+                            <input type="text" class="input-campo" name="localidad">
+                        </div>
+                        <br>
+                        <input class="botonVioleta texto-boton boton" type="submit" value="Actualizar">
+                    </form>
+                </div>
+
+                <div class="foto">
+                    <img src="../static/Actualizar_Info/img/persona.png"   th:src="@{/Actualizar_Info/img/persona.png}" alt="img">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="footer"></section>
+
+</body>
+</html>

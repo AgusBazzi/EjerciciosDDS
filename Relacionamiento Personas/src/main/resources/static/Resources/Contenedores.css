@@ -1,0 +1,44 @@
+.contenedor-general-column{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.contenedor-general-row{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.contenedor1{
+  width: 10%;
+}
+.contenedor2{
+  width: 20%;
+}
+.contenedor3{
+  width: 30%;
+}
+.contenedor4{
+  width: 40%;
+}
+.contenedor5{
+  width: 50%;
+}
+.contenedor6{
+  width: 60%;
+}
+.contenedor7{
+  width: 70%;
+}
+.contenedor8{
+  width: 80%;
+}
+.contenedor9{
+  width: 90%;
+}
+.contenedor10{
+  width: 100%;
+}
