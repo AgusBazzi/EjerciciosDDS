@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/Resources/normalize.css">
     <link rel="stylesheet" href="../static/Resources/Boton.css">
     <link rel="stylesheet" href="../static/Resources/letras.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
     </div>
 </header>
 
-<section class="main">
+<section class="main" id="main">
     <div class="contenedor-base">
         <h3 class="subtitulo">Reporte Personas</h3>
 
@@ -42,28 +43,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
-                        <tr> <td>43054444</td> <td>Lucas</td> <td>Ramirez</td> <td>C.A.B.A.</td> <td>Capital Federal</td> <td>29/06/1998</td> </tr>
+                        <tr v-for="usuarioEstandar in usuarios">
+                            <td>{{usuarioEstandar.dni}}</td>
+                            <td>{{usuarioEstandar.nombre}}</td>
+                            <td>{{usuarioEstandar.apellido}}</td>
+                            <td>{{usuarioEstandar.ciudad}}</td>
+                            <td>{{usuarioEstandar.localidadResidencia}}</td>
+                            <td>{{usuarioEstandar.fechaDeNacimiento}}</td>
 
-
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -75,6 +63,6 @@
 
 <section class="footer"></section>
 
-
+<script src="../static/Usuarios/usuarios.js"></script>
 </body>
 </html>

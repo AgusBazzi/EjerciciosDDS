@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/Resources/normalize.css">
     <link rel="stylesheet" href="../static/Resources/Boton.css">
     <link rel="stylesheet" href="../static/Resources/letras.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 
@@ -23,7 +24,7 @@
     </div>
 </header>
 
-<section class="main">
+<section class="main" id="main">
     <div class="contenedor-base">
         <h3 class="subtitulo">Reporte Delegaciones</h3>
 
@@ -40,33 +41,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
-                        <tr> <td>0000001</td> <td>Persona 1</td> <td>Persona 2</td> <td>Pendiente</td> </tr>
+                        <tr v-for="delegacion in delegaciones">
+                            <td>{{delegacion.id}}</td>
+                            <td>{{delegacion.nombreUsuarioQueDelega}}</td>
+                            <td>{{delegacion.nombreUsuarioDelegado}}</td>
+                            <td>{{delegacion.estadoPersistencia}}</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -78,6 +58,6 @@
 
 <section class="footer"></section>
 
-
+<script src="../static/Administrar_Delegaciones/administrar_delegaciones.js"></script>
 </body>
 </html>

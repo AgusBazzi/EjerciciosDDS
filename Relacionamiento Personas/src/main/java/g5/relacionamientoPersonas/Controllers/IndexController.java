@@ -15,7 +15,6 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("message", "Estas en la página principal.");
         return "Iniciar_Sesion";
     }
 
